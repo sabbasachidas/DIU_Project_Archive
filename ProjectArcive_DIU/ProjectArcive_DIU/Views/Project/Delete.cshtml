@@ -1,0 +1,36 @@
+﻿@using ProjectArcive_DIU.DatabaseContext.Migrations
+
+@model ProjectArcive_DIU.Models.ProjectViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h4>Are you sure you want to delete project?</h4> 
+    
+</div> <br/>
+<div class="row">
+    <form method="post">
+        <input type="submit" value="Delete" />
+        @if (ViewBag.Message != null)
+        {
+            <h3>
+                <b>
+                    @ViewBag.Message
+                </b>
+            </h3>
+        }
+    </form>
+</div>
+
+
+
+
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

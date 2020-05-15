@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home page...";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Welcome to DIU Project Archive</h6>
+    </div>
+    <div class="card-body">
+        <p>
+            In this Archive all final year defense projects of CSE,SWE,EEE,ETE departements are stored !
+        </p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Projects...</h6>
+    </div>
+    <div class="card-body" style="color: black">
+        <ul class="projectList">
+            <li>Web Projects</li>
+            <li>Android Projects</li>
+            <li>Desktop Projects</li>
+            <li>Networking Projects</li>
+            <li>Game Projects</li>
+            <li>Embeded Systems</li>
+            <li>Thesis</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Features...</h6>
+    </div>
+    <div class="card-body" style="color: black">
+        <ul class="features">
+            <li>Knowledge about previously done projects</li>
+            <li>Project detailed description, objective, goal</li>
+            <li>Projects sourcecode</li>
+            <li>Project reports and videos</li>
+            <li>Projects associated files</li>
+            <li>Request for further development</li>
+            <li>Project Ideas</li>
+            <li>Help forum!</li>
+        </ul>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Instructions...</h6>
+    </div>
+    <div class="card-body">
+        <ul class="instructions" style="color: black">
+            <li>Submit your project with every details</li>
+            <li>Upload sourcecode in github.com</li>
+            <li>Upload reports, videos and other documents in Google drive.</li>
+            <li>You have to login before submission of any project.</li>
+
+        </ul>
+    </div>
+</div>
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

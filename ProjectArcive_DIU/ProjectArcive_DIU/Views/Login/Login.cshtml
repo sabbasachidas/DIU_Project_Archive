@@ -1,0 +1,79 @@
+﻿@model ProjectArcive_DIU.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+            </div>
+            <form class="user" method="post">
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user" id="Email" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="Password">
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                    </div>
+                </div>
+                <input class="btn btn-primary btn-user btn-block" type="submit" value="Login" />
+                <hr>
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <i class="fab fa-google fa-fw"></i> Login with Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                </a>
+            </form>
+            <hr>
+            <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <div class="text-center">
+                <a class="small" href="register.html">Create an Account!</a>
+            </div>
+        </div>
+    </div>
+</div>
+@if (ViewBag.Message != null)
+{
+    <h3>
+        <b>
+            @ViewBag.Message
+        </b>
+    </h3>
+
+}
+@if (ViewBag.Message == "Logged In!")
+{
+    <h5>
+        <b>
+            <a href="~/Views/Project/Add.cshtml">Go to Homepage!</a>
+            @Html.ActionLink("Got to Project", "Add", "Project", null, null)
+
+
+        </b>
+    </h5>
+    <p>
+        @if (Session["UserEmail"] != null)
+        {
+            <h6>@Session["UserEmail"]</h6>
+        }
+    </p>
+}
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

@@ -1,0 +1,95 @@
+﻿@model ProjectArcive_DIU.Models.UserViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+            </div>
+            <form class="user" method="post">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+
+                        <input type="text" class="form-control form-control-user" id="UserName" name="UserName" placeholder="Name">
+                    </div>
+                    <div class="col-sm-6">
+
+                        <select class="form-control" id="UserType" name="UserType">
+                            <option value="" selected disabled hidden>User Type</option>
+                            <option value="Student">Student</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="SuperVisor">Super Visor</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user" id="Email" placeholder="Email Address" name="Email">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="password" class="form-control form-control-user" id="Password" placeholder="Password" name="Password">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Identity" placeholder="ID No." name="Identity">
+                    </div>
+                </div>
+                <input class="btn btn-primary btn-user btn-block" type="submit" value="Register" />
+
+                <hr>
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <i class="fab fa-google fa-fw"></i> Register with Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                </a>
+            </form>
+            <hr>
+            <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <div class="text-center">
+                <a class="small" href="login.html">Already have an account? Login!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+@if (ViewBag.Message != null)
+{
+    <h3>
+        <b>
+            @ViewBag.Message
+        </b>
+    </h3>
+}
+@if (ViewBag.Message == "Registered successfully!")
+{
+    <h5>
+        <b>
+            <a href="~/Views/Login/Login.cshtml">Go for Login!</a>
+        </b>
+    </h5>
+    <p>
+        @if (Session["UserEmail"] != null)
+        {
+            <h6>@Session["UserEmail"]</h6>
+        }
+    </p>
+}
+
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

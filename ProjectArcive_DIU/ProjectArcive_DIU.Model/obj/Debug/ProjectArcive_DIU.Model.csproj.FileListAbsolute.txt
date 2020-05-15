@@ -1,0 +1,6 @@
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\bin\Debug\ProjectArcive_DIU.Model.dll
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\bin\Debug\ProjectArcive_DIU.Model.pdb
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\obj\Debug\ProjectArcive_DIU.Model.csprojAssemblyReference.cache
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\obj\Debug\ProjectArcive_DIU.Model.csproj.CoreCompileInputs.cache
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\obj\Debug\ProjectArcive_DIU.Model.dll
+F:\DOT NET\Dropbox\ProjectArcive_DIU\ProjectArcive_DIU.Model\obj\Debug\ProjectArcive_DIU.Model.pdb

@@ -1,0 +1,67 @@
+﻿@using ProjectArcive_DIU.DatabaseContext.Migrations
+
+@model ProjectArcive_DIU.Models.ProjectViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["LoggedIn"] == "Yes")
+{
+    <div class="row">
+        <h4><a href="@Url.Action("Add", "Project")">Add a new Project!</a></h4>
+    </div> <br /> <br />
+    <div class="row" >
+        <h4><b>My Projects:</b></h4> <br />
+        <table class="table table-borderless" style="color: black">
+            <thead>
+                <tr>
+                    <th scope="col">SL.</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Title</th>
+
+                    <th scope="col">Semester</th>
+                    <th scope="col">View details</th>
+                    <th colspan="2" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{ int i = 1;}
+                @foreach (var project in Model.Projects)
+                {
+                    <tr>
+                        <th scope="row">@(i++)</th>
+                        <td>@project.Type</td>
+                        <td>@project.Title</td>
+
+                        <td>@project.Semester</td>
+                        <td>@Html.ActionLink("View details", "Display", "Display", new { id = project.Id }, null)</td>
+                        <td>@Html.ActionLink("Edit","Update", "Project", new { id = project.Id}, null) /
+                            @Html.ActionLink("Delete", "Delete", "Project", new{ id = project.Id}, null)
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="row">
+        <h4>You have to log in .</h4>
+        <br />
+        <br />
+        <h4><a href="@Url.Action("Login", "Login")">Go to login page!</a></h4>
+    </div>
+}
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

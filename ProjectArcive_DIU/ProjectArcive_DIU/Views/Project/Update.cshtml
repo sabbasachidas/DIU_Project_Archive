@@ -1,0 +1,159 @@
+﻿@model ProjectArcive_DIU.Models.ProjectViewModel
+@{
+    ViewBag.Title = "Update Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6">
+
+        <h4>Add Project</h4>
+
+        <form method="post" class="center">
+
+            <div class="from-group">
+
+                @Html.LabelFor(c => c.Title)
+                <input type="text" class="form-control form-control-user" id="Title" placeholder="Project title" name="Title">
+                @Html.ValidationMessageFor(c => c.Title)
+            </div>
+            <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Type)
+
+                <select class="form-control form-control-user" id="Type" name="Type">
+                    <option value="Web">Web</option>
+                    <option value="Android">Android</option>
+                    <option value="Desktop">Desktop</option>
+                    <option value="Embedded System">Embedded System</option>
+                    <option value="Networking">Networking</option>
+                    <option value="IOS">IOS</option>
+                    <option value="Game">Game</option>
+                    <option value="Thesis">Thesis</option>
+                </select>
+
+                @Html.ValidationMessageFor(c => c.Type)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.SubmittedBy)
+                <input type="text" class="form-control form-control-user" id="SubmittedBy" placeholder="ID who submitting" name="SubmittedBy">
+                @Html.ValidationMessageFor(c => c.SubmittedBy)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.SupervisedBy)
+                <input type="text" class="form-control form-control-user" id="SupervisedBy" placeholder="Supervisor name" name="SupervisedBy">
+                @Html.ValidationMessageFor(c => c.SupervisedBy)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.TeamSize)
+                <input type="text" class="form-control form-control-user" id="TeamSize" placeholder="Total teammates" name="TeamSize">
+                @Html.ValidationMessageFor(c => c.TeamSize)
+
+            </div>  <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Semester)
+                <select class="form-control form-control-user" id="Semester" name="Semester">
+                    <option value="Spring 2020">Spring 2020</option>
+                    <option value="Summer 2020">Summer 2020</option>
+                    <option value="Fall 2020">Fall 2020</option>
+                    <option value="Spring 2021">Spring 2021</option>
+                    <option value="Summer 2021">Summer 2021</option>
+                    <option value="Fall 2021">Fall 2021</option>
+                </select>
+                @Html.ValidationMessageFor(c => c.Semester)
+
+            </div>  <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Level)
+                <select class="form-control form-control-user" id="Level" name="Level">
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="M.Sc">M.Sc</option>
+
+                </select>
+                @Html.ValidationMessageFor(c => c.Level)
+
+            </div>  <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Description)
+                <textarea type="text" class="form-control form-control-user" id="Description" placeholder="Project Description" name="Description" rows="4"></textarea>
+                @Html.ValidationMessageFor(c => c.Description)
+
+            </div>  <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Screenshot)
+                <input type="text" class="form-control form-control-user" id="Screenshot" placeholder="Screenshot link" name="Screenshot">
+                @Html.ValidationMessageFor(c => c.Screenshot)
+            </div>  <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Image)
+
+
+                <input class="form-control-file" type="file" id="image" name="image" />
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Github)
+                <input type="text" class="form-control form-control-user" id="Github" placeholder="Github link" name="Github">
+                @Html.ValidationMessageFor(c => c.Github)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Report)
+                <input type="text" class="form-control form-control-user" id="Report" placeholder="Report link" name="Report">
+                @Html.ValidationMessageFor(c => c.Report)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.Youtube)</>
+                <input type="text" class="form-control form-control-user" id="Youtube" placeholder="Youtube link" name="Youtube">
+                @Html.ValidationMessageFor(c => c.Youtube)
+
+            </div> <br />
+            <div class="from-group">
+                @Html.LabelFor(c => c.ContactOfDeveloper)</>
+                <input type="text" class="form-control form-control-user" id="ContactOfDeveloper" placeholder="Contact No." name="ContactOfDeveloper">
+                @Html.ValidationMessageFor(c => c.ContactOfDeveloper)
+
+            </div> <br />
+            <br />
+            <div class="from-group">
+                <input class="btn btn-primary btn-user btn-block" type="submit" value="Save" />
+            </div>
+            <div class="from-group">
+                @if (ViewBag.Message != null)
+                {
+                    <h3>
+                        <b>
+                            @ViewBag.Message
+                        </b>
+                    </h3>
+                }
+                @if (ViewBag.imageStatus != null)
+                {
+                    <h3>
+                        <b>
+                            @ViewBag.imageStatus
+                        </b>
+                    </h3>
+                }
+            </div>
+
+
+        </form>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}

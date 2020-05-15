@@ -1,0 +1,57 @@
+﻿@using ProjectArcive_DIU.DatabaseContext.Migrations
+@*@{  
+angularmvcdemo.modeldataEntities db = new angularmvcdemo.modeldataEntities();  
+}*@
+
+@model ProjectArcive_DIU.Models.ProjectViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Project detail view...</h2> <br/>
+</div>
+
+
+
+
+<div class="card" style="width: 65rem;">
+    @if (Model.ShowProject.Image != null)
+    {
+        <img src="@Url.Content(@Model.ShowProject.Image)" class="card-img-top" alt="..." height="450px" width="500px" />
+    }
+    else
+    {
+        <img src="~/Images/Capture.PNG"  class="card-img-top" alt="..." height="450px" width="500px" />
+    }
+    
+
+    <div class="card-body">
+        <h3 class="card-title">@Model.ShowProject.Title</h3> <br />
+        <p class="card-text">Project type/platform : @Model.ShowProject.Type</p>
+        <p class="card-text">Submitted by : @Model.ShowProject.SubmittedBy</p>
+        <p class="card-text">Supervised by : @Model.ShowProject.SubmittedBy</p>
+        <p class="card-text">Team size : @Model.ShowProject.TeamSize person</p>
+        <p class="card-text">Defense semester : @Model.ShowProject.Semester</p>
+        <p class="card-text">Level : @Model.ShowProject.Level</p>
+        <p class="card-text">Technology used : @Model.ShowProject.Technology</p>
+        <p class="card-text">Developer contact no. @Model.ShowProject.ContactOfDeveloper</p>
+        <p class="card-text">Description : @Model.ShowProject.Description</p>
+        <a href="https://drive.google.com/drive/u/0/folders/1ZqDp5ye5evLbCHoHFvnqsYWFE74MBCBG" class="btn btn-primary">Screenshots</a>
+        <a href="https://github.com/sabbasachidas/DIU_Project_Archive.git" class="btn btn-primary">Sourcecode</a>
+        <a href="https://drive.google.com/drive/u/0/folders/1dexZA4lb2BhHK-dw0jySQXjivlypngSU" class="btn btn-primary">Report</a>
+        <a href="http://www.youtube.com" class="btn btn-primary">Video</a>
+    </div>
+</div>
+
+
+
+
+
+
+@section MyScript{
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Theme/js/sb-admin-2.min.js"></script>
+}
